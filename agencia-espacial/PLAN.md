@@ -59,51 +59,51 @@ Agencia de viajes espaciales (ficticia). Proyecto educativo: HTML5 semántico + 
 - Revisar el prompt, detectar huecos, fijar decisiones (este documento).
 - **Entregable:** `PLAN.md`.
 
-### Etapa 1 — Ideación de contenido con IA
+### Etapa 1 — Ideación de contenido con IA ✅
 - Prompt de marketing: nombre, eslogan, 3 destinos de 15 palabras.
 - Ampliar con un segundo prompt: beneficios, pasos, planes, testimonios, FAQ.
 - **Entregable:** textos finales + `PROMPTS.md`.
 - **Hecho cuando:** no queda ningún "Lorem ipsum" y cada texto está justificado en `PROMPTS.md`.
 
-### Etapa 2 — Esqueleto HTML5 semántico
+### Etapa 2 — Esqueleto HTML5 semántico ✅
 - `<!doctype html>`, `lang`, metadatos, CDN de Tailwind en `<head>`.
 - Estructura: `<header>` → `<main>` (varias `<section>` con `aria-labelledby`) → `<footer>`.
 - **Hecho cuando:** la página se entiende sin estilos y hay un único `<h1>`.
 
-### Etapa 3 — Sistema visual (paleta y base)
+### Etapa 3 — Sistema visual (paleta y base) ✅
 - Aplicar paleta de la sección 2 al `<body>` y a las superficies.
 - Escala de espaciado y tipografía coherentes (`py-20`, `max-w-6xl`, `text-4xl md:text-6xl`).
 - **Hecho cuando:** contraste mínimo AA en todo el texto.
 
-### Etapa 4 — Componentes obligatorios
+### Etapa 4 — Componentes obligatorios ✅
 - **Navbar** con Flexbox (`flex justify-between items-center`) + menú móvil.
 - **Hero** con título, subtítulo, CTA (`hover:bg-cyan-500 transition-all`), cuenta regresiva al próximo despegue.
 - **Destinos** con grid `grid-cols-1 md:grid-cols-3`.
 - **Footer** con copyright y redes ficticias.
 - **Hecho cuando:** cumple todos los puntos de "Estructura obligatoria".
 
-### Etapa 5 — Secciones de conversión (lo añadido)
+### Etapa 5 — Secciones de conversión (lo añadido) ✅
 - Beneficios, Cómo funciona (4 pasos), Planes (3), Testimonios (3), FAQ (`<details>`), Formulario de reserva.
 - **Hecho cuando:** cada CTA lleva a `#reservas` y el formulario valida campos obligatorios.
 
-### Etapa 6 — Interacción mínima
+### Etapa 6 — Interacción mínima ✅
 - Menú móvil, cuenta regresiva, preselección de destino y mensaje de éxito del formulario.
 - Sin librerías: ~40 líneas de JS.
 - **Hecho cuando:** todo funciona con teclado y respeta `prefers-reduced-motion`.
 
-### Etapa 7 — Pair programming con IA y depuración
+### Etapa 7 — Pair programming con IA y depuración ✅
 - Usar la IA para resolver el reto del grid (prompt del Paso 5) y revisar el código.
 - Anotar cada duda y su solución en `PROMPTS.md`.
 
-### Etapa 8 — QA y entrega
+### Etapa 8 — QA y entrega ✅
 Checklist de verificación:
-- [ ] 360 px, 768 px y 1280 px sin scroll horizontal.
-- [ ] 1 columna en móvil → 3 columnas desde `md`.
-- [ ] Sin `style="..."` ni CSS externo.
-- [ ] Solo clases de color por defecto de Tailwind.
-- [ ] Navegación completa con teclado, foco visible.
-- [ ] Consola sin errores.
-- [ ] `PROMPTS.md` completo.
+- [x] 360 px, 768 px y 1280 px sin scroll horizontal.
+- [x] 1 columna en móvil → 3 columnas desde `md`.
+- [x] Sin `style="..."` ni CSS externo.
+- [x] Solo clases de color por defecto de Tailwind.
+- [x] Navegación completa con teclado, foco visible.
+- [x] Consola sin errores.
+- [x] `PROMPTS.md` completo.
 - **Entregable:** `index.html` + `PROMPTS.md` (o enlace a GitHub Pages/CodePen).
 
 ---
