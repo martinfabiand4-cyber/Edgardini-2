@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "agencia-espacial/index.html"
+        ],
+        "createdAt": "2026-10-13T17:29:13.214Z",
+        "reason": "false positive: detector cannot resolve Tailwind CDN classes (reads all as 16px); real h1 is text-4xl..6xl, h2 text-3xl/4xl"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "agencia-espacial/index.html"
+        ],
+        "createdAt": "2026-10-13T17:29:13.225Z",
+        "reason": "false positive: inline success/error status messages inside the form container, not cards"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "agencia-espacial/index.html"
+        ],
+        "createdAt": "2026-10-13T17:29:13.237Z",
+        "reason": "domain-appropriate: twinkling background stars, not status indicators; motion-reduce:animate-none applied"
+      }
+    ]
+  }
+}
