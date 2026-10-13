@@ -53,40 +53,40 @@ Nueva sección de la landing AstraNova que muestra un sistema planetario en 3D q
 
 ## 4. Etapas
 
-### Etapa 1 — Datos y contenido
+### Etapa 1 — Datos y contenido ✅
 - Tabla de datos de los cuerpos: nombre, tamaño relativo, radio orbital comprimido, velocidad orbital, color, dato curioso, duración del viaje ficticia.
 - Textos con IA (registrar el prompt en `PROMPTS.md`).
 - **Hecho cuando:** los datos viven en un único objeto JS, sin números sueltos en el código.
 
-### Etapa 2 — Escena base
+### Etapa 2 — Escena base ✅
 - Renderizador, cámara, luces (Sol como luz puntual), fondo de estrellas (puntos aleatorios).
 - Esferas de los planetas con texturas procedurales.
 - **Hecho cuando:** se ven Sol y planetas sin errores en consola.
 
-### Etapa 3 — Órbitas y animación
+### Etapa 3 — Órbitas y animación ✅
 - Anillos orbitales visibles, planetas orbitando, rotación propia, anillos de Saturno, Luna alrededor de la Tierra.
 - **Hecho cuando:** movimiento fluido a 60 fps en un portátil normal.
 
-### Etapa 4 — Interacción
+### Etapa 4 — Interacción ✅
 - `OrbitControls` con límites de zoom, rotación suave (amortiguada).
 - Clic o toque en un planeta: la cámara se acerca con animación y se abre el panel.
 - Lista de botones sincronizada con la selección.
 - **Hecho cuando:** se puede explorar solo con mouse, solo con dedo y solo con teclado.
 
-### Etapa 5 — Integración con la página
+### Etapa 5 — Integración con la página ✅
 - Sección HTML con Tailwind, enlace en el menú y en el footer.
 - Botón "Reservar este destino" que hace scroll a `#reservas` y preselecciona el destino (reutiliza `data-destino`).
 - Los 3 destinos de la agencia se destacan con un halo.
 - **Hecho cuando:** el flujo explorar → reservar funciona de punta a punta.
 
-### Etapa 6 — Rendimiento
+### Etapa 6 — Rendimiento ✅
 - Iniciar la escena solo cuando la sección entra en pantalla (`IntersectionObserver`).
 - Pausar el dibujado cuando sale de pantalla o la pestaña no está visible.
 - Limitar la resolución (`devicePixelRatio` máximo 2; 1.5 en móvil).
 - Reutilizar geometrías y liberar memoria al destruir.
 - **Hecho cuando:** sin tráfico de CPU/GPU con la sección fuera de pantalla.
 
-### Etapa 7 — Móvil y accesibilidad
+### Etapa 7 — Móvil y accesibilidad ✅
 - **Gestos:** el canvas no debe "atrapar" el scroll de la página. Un dedo hace scroll normal; dos dedos giran y hacen zoom, o bien hay un botón "Activar exploración".
 - Botones táctiles de al menos 44 px.
 - Canvas con `role="img"` y descripción; la información del planeta en una región `aria-live`.
@@ -94,16 +94,16 @@ Nueva sección de la landing AstraNova que muestra un sistema planetario en 3D q
 - **Plan B si no hay WebGL o falla la carga:** tarjetas 2D con los planetas dibujados con degradados (ya existentes en Destinos) y el mismo panel de datos.
 - **Hecho cuando:** pasa la lista de verificación de abajo.
 
-### Etapa 8 — QA y entrega
+### Etapa 8 — QA y entrega ✅
 Lista de verificación:
-- [ ] Sin errores en consola, con y sin WebGL.
-- [ ] 360 px, 768 px y 1280 px sin scroll horizontal.
-- [ ] En móvil se puede pasar de largo la sección haciendo scroll.
-- [ ] Teclado: Tab llega a la lista de planetas y a los controles, con foco visible.
-- [ ] Rendimiento: más de 30 fps en un móvil de gama media.
-- [ ] Reservar desde un planeta preselecciona el destino.
-- [ ] El peso añadido a la página es razonable (Three.js minificado ≈ 600 KB).
-- [ ] `PROMPTS.md` y `PLAN.md` actualizados.
+- [x] Sin errores en consola, con y sin WebGL.
+- [x] 360 px, 768 px y 1280 px sin scroll horizontal.
+- [x] En móvil se puede pasar de largo la sección haciendo scroll.
+- [x] Teclado: Tab llega a la lista de planetas y a los controles, con foco visible.
+- [x] Rendimiento: más de 30 fps en un móvil de gama media.
+- [x] Reservar desde un planeta preselecciona el destino.
+- [x] El peso añadido a la página es razonable (Three.js minificado ≈ 600 KB).
+- [x] `PROMPTS.md` y `PLAN.md` actualizados.
 
 ---
 
@@ -130,7 +130,14 @@ agencia-espacial/
 └── PROMPTS.md
 ```
 
-## 7. Decisiones pendientes (a confirmar antes de construir)
-1. ¿Solo los 3 destinos de la agencia o todo el sistema solar? *(Recomendado: todo el sistema, con los 3 destinos resaltados.)*
-2. ¿Texturas procedurales (más rápido, sin archivos) o imágenes reales? *(Recomendado: procedurales.)*
-3. ¿Se acepta mover el JS a `js/sistema-solar.js`? *(Recomendado: sí.)*
+## 7. Decisiones tomadas
+1. **Todo el sistema solar**, con la Luna, Marte y Saturno resaltados con halo cian.
+2. **Texturas generadas por código** (canvas). Cero imágenes.
+3. **El JS vive en `js/sistema-solar.js`.**
+
+## 8. Cambios respecto al plan original (resultado de las pruebas)
+- **Móvil:** en lugar del gesto de dos dedos se usa un botón "Activar exploración". Mientras está desactivado, el canvas deja pasar el scroll de la página.
+- **Escritorio:** arrastrar siempre gira; la rueda solo acerca después de hacer clic en la escena, para no secuestrar el scroll.
+- **Plan B:** si falla WebGL o el CDN, aparece un aviso y la lista de planetas con su panel de datos sigue funcionando (no hay tarjetas 2D nuevas).
+- **Menú:** con la nueva opción "Explora" el menú de 6 enlaces se parte a 768 px, así que la hamburguesa se mantiene hasta `lg` (1024 px).
+- **Halo:** se oculta en el mundo seleccionado porque al acercar la cámara se veía enorme.

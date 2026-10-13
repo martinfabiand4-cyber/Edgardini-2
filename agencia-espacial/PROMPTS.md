@@ -48,3 +48,11 @@ Reemplaza la columna "Respuesta" con la respuesta real de tu IA si repites el ej
 > Mi navbar con Flexbox se desborda en móvil con 5 enlaces. ¿Cómo hago un menú que se oculte en pantallas pequeñas con un botón hamburguesa usando solo clases por defecto de Tailwind y poco JavaScript?
 
 **Resultado usado:** `hidden md:flex` en la lista, botón con `md:hidden` y un script corto que alterna `hidden`/`flex` y actualiza `aria-expanded`.
+
+## Prompt 6 — Sistema solar 3D interactivo
+**Prompt:**
+> Necesito una sección de mi landing con un sistema solar 3D interactivo. Debe usar Three.js desde CDN, texturas generadas por código (sin imágenes), órbitas animadas, que se pueda girar y hacer zoom, y un panel con datos de cada planeta. La Luna, Marte y Saturno deben destacarse porque son mis destinos, con un botón que lleve al formulario de reserva. Primero hazme un plan por etapas.
+
+**Resultado usado:** plan en `PLAN-3D.md` e implementación en `js/sistema-solar.js`.
+
+**Decisiones tomadas:** todo el sistema solar; texturas con `canvas`; JS en archivo aparte; escala artística con aviso visible; exploración con botón en móviles para no bloquear el scroll.

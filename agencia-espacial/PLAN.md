@@ -123,6 +123,8 @@ Reservas (formulario)
 Footer (redes · aviso de ficción · copyright)
 ```
 
+> Ampliación: se añadió la sección **Explora** (sistema solar 3D) entre Destinos y Beneficios. Ver `PLAN-3D.md`.
+
 ## 5. Rúbrica ampliada (para el profesor)
 
 | Criterio | Excelente | Necesita mejorar |
